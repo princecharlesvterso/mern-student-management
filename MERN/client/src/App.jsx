@@ -8,13 +8,21 @@ function App() {
   const [age, setAge] = useState("");
   const [editingId, setEditingId] = useState(null);
 
-  const getStudents = () => {
-    axios
-      .get("https://mern-student-management-5qol.onrender.com")
-      .then((response) => {
+const getStudents = () => {
+  axios
+    .get("https://mern-student-management-5qol.onrender.com/students")
+    .then((response) => {
+      if (Array.isArray(response.data)) {
         setStudents(response.data);
-      });
-  };
+      } else {
+        setStudents([]);
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+      setStudents([]);
+    });
+};
 
   useEffect(() => {
     axios
