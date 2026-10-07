@@ -57,7 +57,7 @@ const getStudents = () => {
 
   const deleteStudent = (id) => {
     axios
-      .delete(`https://mern-student-management-5qol.onrender.com/students${id}`)
+      .delete(`https://mern-student-management-5qol.onrender.com/students/${id}`)
       .then(() => {
         getStudents();
       })
