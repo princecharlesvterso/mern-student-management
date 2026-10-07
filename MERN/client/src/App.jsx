@@ -123,23 +123,24 @@ const getStudents = () => {
 
       <h2>Students</h2>
 
-      {students.map((student) => (
-        <div key={student._id}>
-          <p>Name: {student.name}</p>
-          <p>Course: {student.course}</p>
-          <p>Age: {student.age}</p>
+      {Array.isArray(students) &&
+  students.map((student) => (
+    <div key={student._id}>
+      <p>Name: {student.name}</p>
+      <p>Course: {student.course}</p>
+      <p>Age: {student.age}</p>
 
-          <button type="button" onClick={() => editStudent(student)}>
-            Edit
-          </button>
+      <button type="button" onClick={() => editStudent(student)}>
+        Edit
+      </button>
 
-          <button type="button" onClick={() => deleteStudent(student._id)}>
-            Delete
-          </button>
+      <button type="button" onClick={() => deleteStudent(student._id)}>
+        Delete
+      </button>
 
-          <hr />
-        </div>
-      ))}
+      <hr />
+    </div>
+  ))}
     </div>
 
   );
