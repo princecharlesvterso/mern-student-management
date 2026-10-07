@@ -10,7 +10,7 @@ function App() {
 
   const getStudents = () => {
     axios
-      .get("http://localhost:5000/students")
+      .get("https://mern-student-management-5qol.onrender.com")
       .then((response) => {
         setStudents(response.data);
       });
@@ -18,7 +18,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/students")
+      .get("https://mern-student-management-5qol.onrender.com")
       .then((response) => {
         setStudents(response.data);
       });
@@ -32,7 +32,7 @@ function App() {
     }
 
     axios
-      .post("http://localhost:5000/students", {
+      .post("https://mern-student-management-5qol.onrender.com", {
         name,
         course,
         age,
@@ -48,7 +48,7 @@ function App() {
 
   const deleteStudent = (id) => {
     axios
-      .delete(`http://localhost:5000/students/${id}`)
+      .delete(`https://mern-student-management-5qol.onrender.com${id}`)
       .then(() => {
         getStudents();
       })
@@ -67,7 +67,7 @@ function App() {
 
   const updateStudent = () => {
     axios
-      .put(`http://localhost:5000/students/${editingId}`, {
+      .put(`https://mern-student-management-5qol.onrender.com${editingId}`, {
         name,
         course,
         age,
